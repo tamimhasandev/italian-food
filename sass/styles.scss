@@ -1,0 +1,439 @@
+@import "./base";
+@import "./variables";
+@import "./mixins";
+/* =====================================
+        Header Area scss
+========================================*/
+
+header {
+  background-color: var(--primary-color);
+  .container {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #eae8ab;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      clip-path: polygon(79% 0, 100% 0%, 100% 100%, 57% 100%);
+    }
+    padding: var(--spacing);
+    // Top Header
+    .top-header {
+      position: relative;
+      z-index: 10;
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        width: 250px;
+        height: 60px;
+        img {
+          height: 100%;
+        }
+      }
+      .line {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 15px;
+        vertical-align: bottom;
+        span {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+        a {
+          font-size: 30px;
+          font-weight: 700;
+        }
+        div {
+          width: 30px;
+          height: 53px;
+          grid-column: 2 / span 2;
+          grid-row: 1 / span 2;
+        }
+      }
+    }
+    // Main Menu
+    .main-menu {
+      margin-top: 30px;
+      position: relative;
+      z-index: 10;
+      ul {
+        display: flex;
+        gap: 60px;
+        justify-content: end;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    //Hero Area
+    #hero-area {
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+      z-index: 10;
+      & > div {
+        width: 575px;
+        text-align: center;
+        margin-top: 80px;
+        .text-head {
+          h2 {
+            font-family: var(--Gabelisa);
+            font-size: 55px;
+          }
+          h1 {
+            font-family: var(--Fredericka);
+            font-size: 90px;
+          }
+          p {
+            font-size: 26px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            margin-bottom: 85px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -42.5px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 70%;
+              height: 2px;
+              background-color: rgba(#000, 0.3);
+            }
+          }
+        }
+        .happy-hour {
+          font-family: var(--Fredericka);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          p {
+            font-size: 19px;
+          }
+          span {
+            font-size: 55px;
+          }
+        }
+        .order-now {
+          margin-top: 35px;
+          padding-bottom: 100px;
+          a {
+            @include button(220px, #000);
+            transition: all 0.3s;
+            &:hover {
+              background-color: #eae8ab;
+              border: 1px solid #eae8ab;
+            }
+          }
+        }
+      }
+      .food-plate {
+        user-select: none;
+        width: 565px;
+        height: 565px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+/* =====================================
+        Foods List section scss
+========================================*/
+
+#foods {
+  .container {
+    .section-details {
+      margin-top: 80px;
+    }
+    .food-items {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 45px;
+      margin-bottom: 120px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background: #eae8ab;
+        left: 0;
+        top: 135px;
+        z-index: 1;
+      }
+      .item {
+        display: block;
+        text-align: center;
+        position: relative;
+        z-index: 99;
+        .item-img {
+          width: 355px;
+          height: 355px;
+          margin: 0 auto;
+          margin-bottom: 40px;
+          img {
+            height: 100%;
+          }
+        }
+        .item-details {
+          text-align: center;
+          h3 {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+          p {
+            margin-top: 20px;
+            max-width: 360px;
+            line-height: 1.5em;
+          }
+          div {
+            a {
+              margin-top: 35px;
+              @include button(200px, transparent);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* =====================================
+        Discover section scss
+========================================*/
+#discover {
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 110px;
+    .section-details {
+      strong {
+        display: block;
+        font-weight: 600;
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    .slider {
+      margin: 0 auto;
+      margin-top: 45px;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 500px;
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+/* =====================================
+        Popular section scss
+========================================*/
+#popular {
+  .container {
+    padding: var(--spacing);
+    margin-bottom: 85px;
+    .popular-items {
+      display: flex;
+      gap: 40px;
+      .bp {
+        width: 600px;
+        height: 435px;
+        a {
+          display: block;
+          position: relative;
+          height: 100%;
+          div {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            color: white;
+            text-transform: uppercase;
+            p {
+              font-size: 25px;
+              font-weight: 600;
+              margin-bottom: 20px;
+            }
+            h3 {
+              font-size: 40px;
+              font-weight: 800;
+              letter-spacing: 2px;
+            }
+          }
+        }
+        img {
+          height: 100%;
+        }
+      }
+      .sp {
+        .top {
+          margin-bottom: 35px;
+        }
+        & > div {
+          width: 600px;
+          height: 200px;
+          a {
+            display: block;
+            height: 100%;
+            position: relative;
+            div {
+              position: absolute;
+              top: 40px;
+              left: 40px;
+              color: white;
+              text-transform: uppercase;
+
+              p {
+                font-size: 25px;
+                font-weight: 600;
+                margin-bottom: 10px;
+              }
+              h3 {
+                font-size: 30px;
+                font-weight: 800;
+                letter-spacing: 2px;
+              }
+            }
+          }
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =====================================
+        Find table scss
+========================================*/
+#find-table {
+  .container {
+    padding: var(--spacing);
+    margin-bottom: 100px;
+    .section-details {
+      strong {
+        display: block;
+        font-weight: 600;
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    form {
+      width: 785px;
+      margin: 0 auto;
+      display: grid;
+      gap: 25px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 80px;
+      input {
+        height: 60px;
+        outline: 0;
+        padding: 0 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      input[type="submit"] {
+        text-transform: uppercase;
+        background-color: var(--primary-color);
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* =====================================
+        Footer scss
+========================================*/
+footer {
+  background-color: #000;
+  color: white;
+  .container {
+    padding: var(--spacing);
+    background-image: url("../images/BG\ Image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    .footer-content {
+      padding-top: 65px;
+      display: flex;
+      justify-content: space-between;
+      .description {
+        .logo {
+          width: 320px;
+          height: 80px;
+          img {
+            filter: brightness(0) saturate(100%) invert(78%) sepia(40%)
+              saturate(3188%) hue-rotate(7deg) brightness(113%) contrast(107%);
+          }
+        }
+        p {
+          margin-top: 70px;
+          width: 500px;
+          font-family: var(--Montserrat);
+          line-height: 1.7em;
+        }
+      }
+      .contact {
+        align-self: flex-end;
+        display: grid;
+        gap: 10px;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+    .copy-right {
+      margin-top: 165px;
+      padding-bottom: 95px;
+      display: flex;
+      justify-content: space-between;
+      .social {
+        display: flex;
+        gap: 10px;
+        li > a {
+          background-color: white;
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

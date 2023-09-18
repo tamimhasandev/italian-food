@@ -1,0 +1,40 @@
+:root {
+  --Montserrat: "Montserrat", sans-serif;
+  --primary-color: #ffe001;
+  --Fredericka: "Fredericka the Great", cursive;
+  --Gabelisa: "Gabelisa", cursive;
+  --spacing: 0 55px;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--Montserrat);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: Gabelisa;
+  src: url("../fonts/gabelisa/Gabelisa.otf");
+}
