@@ -1,14 +1,30 @@
 @import "./base";
 @import "./variables";
 @import "./mixins";
+
+// Genarel CSS For Animation
+.transform-0 {
+  transform: translateX(0) !important;
+  transform: translateY(0) !important;
+  transition: all 1s;
+  opacity: 1;
+  visibility: visible;
+}
+.rotate-0 {
+  transform: rotate(0deg) !important;
+  transition: all 1s;
+  opacity: 1 !important;
+}
+
 /* =====================================
         Header Area scss
 ========================================*/
 
 header {
   background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
   .container {
-    position: relative;
     &::after {
       content: "";
       position: absolute;
@@ -24,6 +40,7 @@ header {
     padding: var(--spacing);
     // Top Header
     .top-header {
+      transform: translateY(-100%);
       position: relative;
       z-index: 10;
       padding-top: 40px;
@@ -55,10 +72,15 @@ header {
           grid-column: 2 / span 2;
           grid-row: 1 / span 2;
         }
+        button {
+          display: none;
+          cursor: pointer;
+        }
       }
     }
     // Main Menu
     .main-menu {
+      transform: translateX(100%);
       margin-top: 30px;
       position: relative;
       z-index: 10;
@@ -69,6 +91,9 @@ header {
         text-transform: uppercase;
         font-weight: 600;
       }
+      .close {
+        display: none;
+      }
     }
     //Hero Area
     #hero-area {
@@ -76,10 +101,12 @@ header {
       justify-content: space-evenly;
       position: relative;
       z-index: 10;
-      & > div {
+      margin-top: 80px;
+      & > .text-wrapper {
         width: 575px;
         text-align: center;
-        margin-top: 80px;
+
+        transform: translateX(-150%);
         .text-head {
           h2 {
             font-family: var(--Gabelisa);
@@ -134,6 +161,8 @@ header {
         }
       }
       .food-plate {
+        transform: rotate(360deg);
+        opacity: 0;
         user-select: none;
         width: 565px;
         height: 565px;
@@ -210,8 +239,7 @@ header {
 ========================================*/
 #discover {
   .container {
-    width: 70%;
-    margin: 0 auto;
+    padding: var(--spacing);
     margin-bottom: 110px;
     .section-details {
       strong {
@@ -228,6 +256,8 @@ header {
       border-radius: 10px;
       overflow: hidden;
       height: 500px;
+      width: 85%;
+      height: 375px;
       .swiper {
         width: 100%;
         height: 100%;
@@ -262,7 +292,7 @@ header {
       display: flex;
       gap: 40px;
       .bp {
-        width: 600px;
+        width: 50%;
         height: 435px;
         a {
           display: block;
@@ -291,11 +321,12 @@ header {
         }
       }
       .sp {
+        width: 50%;
         .top {
           margin-bottom: 35px;
         }
         & > div {
-          width: 600px;
+          width: 100%;
           height: 200px;
           a {
             display: block;
@@ -404,19 +435,20 @@ footer {
       .contact {
         align-self: flex-end;
         display: grid;
-        gap: 10px;
+        gap: 20px;
         div {
           display: flex;
           align-items: center;
-          gap: 20px;
+          gap: 10px;
         }
       }
     }
     .copy-right {
-      margin-top: 165px;
-      padding-bottom: 95px;
+      margin-top: 80px;
+      padding-bottom: 45px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .social {
         display: flex;
         gap: 10px;
@@ -431,6 +463,7 @@ footer {
           align-items: center;
           svg {
             color: transparent;
+            width: 1.2em;
           }
         }
       }

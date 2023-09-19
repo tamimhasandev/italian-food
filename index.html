@@ -18,6 +18,8 @@
     />
     <!-- StyleSheet -->
     <link rel="stylesheet" href="./css/styles.min.css" />
+    <!-- Responsive stylessheet -->
+    <link rel="stylesheet" href="./css/responsive.min.css" />
   </head>
   <body>
     <header>
@@ -28,6 +30,17 @@
             <span>Express Delivery </span>
             <div><img src="./images/iPhone.png" alt="tel" /></div>
             <a href="tel:+1800 258 888">1800 258 888</a>
+            <button class="bar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1.5em"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
         <menu class="main-menu">
@@ -37,9 +50,20 @@
             <li><a href="#">Our Story</a></li>
             <li><a href="#">Contact us</a></li>
           </ul>
+          <button class="close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.5em"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
         </menu>
         <div id="hero-area">
-          <div>
+          <div class="text-wrapper">
             <div class="text-head">
               <h2>Are You Hungry?</h2>
               <h1>Don't Wait!</h1>
@@ -77,7 +101,7 @@
           <div class="food-items">
             <div class="item">
               <div class="item-img">
-                <img src="./images/plate-2.png" alt="item" />
+                <img src="./images/plate-2-min.png" alt="item" />
               </div>
               <div class="item-details">
                 <h3>Lorem ipsum dolor</h3>
@@ -107,7 +131,7 @@
             </div>
             <div class="item">
               <div class="item-img">
-                <img src="./images/tomato-plate.png" alt="item" />
+                <img src="./images/tomato-plate-min.png" alt="item" />
               </div>
               <div class="item-details">
                 <h3>Lorem ipsum dolor</h3>
@@ -208,7 +232,7 @@
       <section id="find-table">
         <div class="container">
           <div class="section-details">
-            <strong>Discover</strong>
+            <strong>Reservation</strong>
             <h2 class="section-title">Book your table</h2>
             <p class="section-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -334,5 +358,6 @@
         },
       });
     </script>
+    <script src="./js/app.js"></script>
   </body>
 </html>

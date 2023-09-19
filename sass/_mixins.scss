@@ -22,10 +22,16 @@
   text-align: center;
   margin-bottom: 35px;
   text-transform: uppercase;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
 }
 .section-description {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   line-height: 1.6em;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
 }
